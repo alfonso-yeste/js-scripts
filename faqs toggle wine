@@ -1,3 +1,48 @@
+//explicación
+
+primero vamos a buscar el div más cercano, vemos que tiene un div> toggle y queremos recorrer todo los toggle, por lo tanto hacemos un quereSelectorAll
+
+<div class="toggle default" data-inner-wrap="true"><h3><a href="#"><i class="icon-plus-sign"></i>ESTRATEGIA DE MARCA</a></h3><div><div class="inner-toggle-wrap"><div class="wpb_text_column wpb_content_element "><div class="wpb_wrapper"><p>Aprende a trabajar una marca con estrategia. Análisis previo, storytelling, territorios de marca…</p></div></div></div></div></div>
+
+//mira:
+document.querySelectorAll("div.toggle > h3")[0].innerText
+
+//ponemos la posición [0] de esta forma si funcionaría, accedemos dentro del array. el subcero o la posicio indice.
+
+//al final nos damos cuenta es que solo poniendo esta pate ya funciona
+document.querySelectorAll(".toggle")
+
+
+//Al final creamos una etiqueta de HTML
+
+<scrip>
+  (function(){
+      var = document.querySelectorAll(.toggle).forEach(function(element){
+        element.addEventListener('click', function(){
+        
+        window.dataLayer.push({
+        'event': 'faqsCursosHome',
+        'eventCategory': 'interaccion'
+        'eventLabel': this.querySelector("h3").innerText,
+        
+        
+        });
+        
+        });
+      });  
+  
+  })();
+  <script>
+
+
+
+
+
+
+
+<script>
+
+
 // crear un event listener para un tag de el html
 
 <script>
