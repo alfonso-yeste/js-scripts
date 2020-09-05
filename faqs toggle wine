@@ -1,0 +1,19 @@
+// crear un event listener para un tag de el html
+
+<script>
+(function(){
+  document.querySelectorAll(".toggle").forEach(function(element){
+
+    element.addEventListener('click', function(){
+
+        window.dataLayer.push({
+            'event': 'faqsCursosHome',  // toggle????
+            'eventCategory': 'interaccion',
+            'eventLabel': this.querySelector("h3").innerText,
+        });
+    });
+
+});
+})();  
+</script>
+
