@@ -9,7 +9,7 @@ document.querySelectorAll("div.toggle > h3")[0].innerText
 
 //ponemos la posición [0] de esta forma si funcionaría, accedemos dentro del array. el subcero o la posicio indice.
 
-//al final nos damos cuenta es que solo poniendo esta pate ya funciona
+//al final nos damos cuenta es que solo poniendo esta parte ya funciona
 document.querySelectorAll(".toggle")
 
 
