@@ -70,3 +70,45 @@ function setCookie(name,value,days) {
 setCookie('_gtmCart', JSON.stringify(carrito), 0);
 })();
 </script>
+
+//HTML Purchase
+
+<script>
+(function(){
+  
+  var cartJson = [];
+  
+  // leer cookie y hacer push del nuevo producto
+  if ({{cookie - _gtmCart}}) {    
+    var cartJson = JSON.parse({{cookie - _gtmCart}});
+  }
+  
+//// INICIO - ESTO ES NUEVO - PRUEBALO
+  var orderId = {{dom - dato4}};
+ 
+  if (orderId == 'null' || !orderId) {
+    var r = Math.floor(Math.random() * (1000 - 1)) + 1;
+    orderId = new Date().toISOString() + '-' + r;
+  }
+//// FIN - ESTO ES NUEVO - PRUEBALO
+  
+  window.dataLayer.push({
+    'event': 'purchase',
+    'ecommerce': {
+      'purchase': {
+        'actionField': {
+          'id': orderId,
+          'revenue': '{{js - revenue}}'
+        },
+        'products': cartJson
+      }
+    }
+  });
+  
+  // borrar cookie
+  document.cookie = '_gtmCart=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  
+})();
+</script>
+
+
