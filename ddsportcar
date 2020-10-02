@@ -1,0 +1,17 @@
+#cuando queremos selecciona el valor de una lista de opciones por ejemplo:
+
+<div class="m-secondSelects"> <div class="col-xs-12"> <select name="lugar_recogida" id="show_recogida"> <option value="0">LUGAR DE RECOGIDA</option> <optgroup label="Andorra"> <option value="7">
+															Andorra														</option> </optgroup> <optgroup label="España"> <option value="59">
+															A Coruña														</option> <option value="47">
+															Alicante														</option> <option value="54">
+															Almería														</option> <option value="8">
+															Barcelona														</option> <option value="61">
+															Bilbao														</option> <option value="70">
+                              
+                              
+#La soculcion sería
+
+document.querySelector("#show_recogida").selectedOptions[0].innerText.trim()
+
+#el trim sirve para quitar los espacios, recuerda que es una función anónima y es por ese motivo que ponemos los () El [0] subzero lo tenemos que poner porque es un
+array de una lista.
