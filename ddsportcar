@@ -15,3 +15,9 @@ document.querySelector("#show_recogida").selectedOptions[0].innerText.trim()
 
 #el trim sirve para quitar los espacios, recuerda que es una función anónima y es por ese motivo que ponemos los () El [0] subzero lo tenemos que poner porque es un
 array de una lista.
+
+#si queremos seleccionar la fecha hacemos esto:
+<input type="text" class="form_datetime_off" id="startdate" name="start_date" placeholder="FECHA INICIO ALQUILER" value="" readonly="readonly" autocomplete="off">
+
+
+document.querySelectorAll(".form_datetime_off")[0].value
