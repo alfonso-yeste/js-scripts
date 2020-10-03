@@ -1,0 +1,8 @@
+Sacar todos los enlaces de una web, esta función te las saca ya formateadas
+
+var urls = "";
+
+document.querySelectorAll("a").forEach(function(element){
+urls+= element.href + "\n"
+});
+console.log(urls)
