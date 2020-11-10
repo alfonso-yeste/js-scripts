@@ -21,3 +21,59 @@ array de una lista.
 
 
 document.querySelectorAll(".form_datetime_off")[0].value
+
+
+
+
+Cuando tenemos un form y tenemos que sacar el valuer de cada input:
+
+Empezamos con esto:
+
+document.querySelector("#tipo").value
+nos devuelve
+c6
+
+tambien podemos hacer esto que sería la posición:
+
+document.querySelector("#tipo").selectedIndex
+2
+
+Hacemos un index y ya nos da el valor
+
+document.querySelector("#tipo")[2]
+<option value=​"c6">​
+															BMW X5 MPack
+														​</option>​
+														
+document.querySelector("#tipo")[2].innerText
+
+y el siguiente:
+
+document.querySelector("#tipo")[2].innerText.trim()
+
+
+/* y aquí el algoritmo completo
+document.querySelector("#tipo")[document.querySelector("#tipo").selectedIndex].innerText.trim()
+
+
+Para la fecha
+
+document.querySelector("#startdate").value
+
+
+Para la fecha de recogida
+document.querySelector("#show_recogida")[document.querySelector("#show_recogida").selectedIndex].innerText.trim()
+
+document.querySelector("#lugar_entrega")[document.querySelector("#lugar_entrega").selectedIndex].innerText.trim()
+
+
+
+
+
+
+
+
+
+
+
+
