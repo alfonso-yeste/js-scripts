@@ -1,0 +1,58 @@
+window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', "")
+"query=polar&query_name=match_and"
+const params = new URLSearchParams(querystring)
+VM4296:1 Uncaught ReferenceError: querystring is not defined
+    at <anonymous>:1:36
+(anonymous) @ VM4296:1
+const params = new URLSearchParams(window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', "")
+
+const params = new URLSearchParams(window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', ""))
+VM4344:1 Uncaught SyntaxError: Identifier 'params' has already been declared
+params = new URLSearchParams(window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', ""))
+VM4362:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:8
+(anonymous) @ VM4362:1
+var query = new URLSearchParams(window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', "")) 
+undefined
+query
+URLSearchParams {}
+query.get("query")
+"polar"
+query.get("query_name")
+"match_and"
+window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', "").spli("&")
+VM4603:1 Uncaught TypeError: window.location.href.replace(...).spli is not a function
+    at <anonymous>:1:76
+(anonymous) @ VM4603:1
+window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', "").split("&")
+(2) ["query=polar", "query_name=match_and"]0: "query=polar"1: "query_name=match_and"length: 2__proto__: Array(0)
+window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', "").split("&")[0].split("=")
+(2) ["query", "polar"]
+var queryString = [];
+
+window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', "").split("&").forEach(function(element){
+    var llaveValor = element.split("=");
+    queryString[llaveValor[0]]=llaveValor[1];
+})
+undefined
+queryString
+[query: "polar", query_name: "match_and"]query: "polar"query_name: "match_and"length: 0__proto__: Array(0)
+queryString["query"]
+"polar"
+queryString["query_name"]
+"match_and"
+var getLlave = function get(llave) {
+
+var queryString = [];
+
+window.location.href.replace('https://bulevip.com/es/#/dffullscreen/', "").split("&").forEach(function(element){
+    var llaveValor = element.split("=");
+    queryString[llaveValor[0]]=llaveValor[1];
+});
+
+return queryString[llave];
+
+}
+undefined
+getLlave("query")
+"polar"
