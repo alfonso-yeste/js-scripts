@@ -1,0 +1,48 @@
+Para extraer todo lo que tiene la URL después de una busqueda (kibuc)
+
+ejemplo de Url
+"?data=2020-11-19&info=eyJhY3Rpb24iOiJzdGVwMSIsInRva2VuIjoiWWpoa01XSTBNMlZoWlRjek5UZzNZbUUxTm1KaFpXWTFOelEzTURsbFkyST0iLCJub21icmUiOiJ0ZXN0IiwiZW1haWwiOiJheWVzdGUzMkBnbWFpbC5jb20iLCJ0ZWxlZm9ubyI6IjYxMDUyNzk0NSIsInByb3ZpbmNpYSI6Ilx1MDBjMWxhdmEiLCJyZ3BkIjoiMSIsInN1Ym1pdCI6IlNpZ3VpZW50ZSBwYXNvIiwiYm90aWdhIjpbIlx1MDBjMWxhdmEiLCJLSUJVQyBBTU9SRUJJRVRBIiwiMTA6MDAsMTA6MzAsMTE6MDAsMTE6MzAsMTI6MDAsMTI6MzAsMTY6MDAsMTY6MzAsMTc6MDAsMTc6MzAsMTg6MDAsMTg6MzAsMTk6MDAsMTk6MzAiLCJhbW9yZWJpZXRhQGtpYnVjLmNvbSIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLCIxMDowMCwxMDozMCwxMTowMCwxMTozMCwxMjowMCwxMjozMCwxMzowMCwxNjozMCwxNzowMCwxNzozMCwxODowMCwxODozMCwxOTowMCIsbnVsbCxudWxsLCJLSUJVQyBBTU9SRUJJRVRBOiBCYXJyaW8gTW9udG9ycmEgU1wvTiwgNDgzNDAsIEFtb3JlYmlldGEiXX0="
+
+window.location.search
+
+
+Luego podemos guardarlo en una variable y después solocitar los parametros conurlParams.get (y lo que queramos coger)
+
+var urlParams = new URLSearchParams(window.location.search)
+urlParams.get("data");
+urlParams.get("time");
+
+Y ahora descodificamos
+console.log(atob(urlParams.get("info")))
+
+Nos da como resultado un string porqueue está entre comillas 
+
+VM1965:1 {"action":"step1","token":"YjhkMWI0M2VhZTczNTg3YmE1NmJhZWY1NzQ3MDllY2I=","nombre":"test","email":"ayeste32@gmail.com","telefono":"610527945","provincia":"Alicante","rgpd":"1","submit":"Siguiente paso","botiga":["Alicante","MUEBLES CORTINA Z.A","11:00,11:30,12:00,12:30,13:00,16:30,17:00,17:30,18:00,18:30,19:00,19:30,20:00","cortina@kibuc.com",null,null,null,null,null,"11:00,11:30,12:00,12:30,13:00",null,null,"KIBUC ALFAZ DEL PI: Carretera de Valencia km 154, 03581, Alfaz del P"]}
+
+Ahora tenemos que transformarlo a un objeto Json
+
+JSON.parse(atob(urlParams.get("info")))
+
+Y nos da un objeto
+
+{action: "step1", token: "YjhkMWI0M2VhZTczNTg3YmE1NmJhZWY1NzQ3MDllY2I=", nombre: "test", email: "ayeste32@gmail.com", telefono: "610527945", …}
+
+Y ahora podemos coger la provincia
+
+JSON.parse(atob(urlParams.get("info"))).provincia
+
+Y ahora ya podemos hacer la función
+
+unction() {
+
+var urlParams =  new URLSearchParams(window.location.search)
+var info = JSON.parse(atob(urlParams.get("info")));
+
+return urlParams.get("data") + " " + urlParams.get("time") + "|" + info.botiga.pop();
+
+}
+
+
+
+
+
