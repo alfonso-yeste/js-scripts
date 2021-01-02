@@ -7,12 +7,6 @@ element.innerText=document.querySelector('#our_price_display').innerText;
 
 
 
-
-
-
-
-
-
 otro ejemplo, en la landing de Cupra formentor, queremos hacer que el texto que hay dentro del form cambie por un nuevo texto. Para ello, creamos una variable var text
 seleccionamos el id del modal (modalLabel) y hacemos un if.
 
