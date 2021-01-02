@@ -1,0 +1,29 @@
+Por ejemplo, en la web de Kibuc tenemos un addtocart con un precio, si queremos hacer una copia de ese botón y que cuando se cambie arriba también se haga abajo, se lo siguiente:
+
+vamos a buscar el id del precio con un document.querySelector.
+
+element.innerText=document.querySelector('#our_price_display').innerText;
+
+
+
+
+
+
+
+
+
+
+otro ejemplo, en la landing de Cupra formentor, queremos hacer que el texto que hay dentro del form cambie por un nuevo texto. Para ello, creamos una variable var text
+seleccionamos el id del modal (modalLabel) y hacemos un if.
+
+
+document.querySelectorAll('button[page-type="presupuesto"]').forEach(function(element){
+
+  element.addEventListener('click', function(){
+    var text = document.getElementById('modalLabel');
+    if (text.innerText == 'Solicitar presupuesto Formentor'){
+      text.innerText = 'Solicite su presupuesto presonalizado con un dto extra al rellenar el formulario';
+    }
+  });
+
+});
