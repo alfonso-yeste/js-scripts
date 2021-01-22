@@ -1,0 +1,29 @@
+// creamos una función para contar las palabras
+// mediante expreseiones regurales vamos re-emplazando los espación, puntos, comas, puntos comas, por vacío, para solo contar palabras.
+//luego hacemos un return de todas las palabras y hacemos un split
+//hacemos un console.log y seleccionamos el div donde contiene el texto y hacemos un innertext
+
+
+function countWords(str) {
+         str = str.replace(/[\.\,\;]/gi,"");
+         str = str.replace(/(^\s*)|(\s*$)/gi,"");
+         str = str.replace(/[ ]{2,}/gi," ");
+         str = str.replace(/\n /,"\n");
+         return str.split(' ').length;
+      }
+      console.log(countWords(document.querySelector(".amp_textnoticia").innerText));
+      
+      
+ // Si quieres probar como funciona haz esto
+ 
+ function countWords(str) {
+         str = str.replace(/[\.\,\;]/gi,"");
+         str = str.replace(/(^\s*)|(\s*$)/gi,"");
+         str = str.replace(/[ ]{2,}/gi," ");
+         str = str.replace(/\n /,"\n");
+         return str.split(' ').length;
+      }
+      console.log(countWords("hola . ; que tal. ,"));
+      
+//te debería dar que hay 3 palabras (hola que tal)
+
