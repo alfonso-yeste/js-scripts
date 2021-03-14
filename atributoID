@@ -1,0 +1,12 @@
+PAra seleccionar un atributo id de un nodo el cual tiene muchas definiciones y solo queremos coger por jeemplo 
+el que contenga abc id= boton_reserva_1234 y queramos únicamente coger el boton_reserva se puede hacer de la siguiente forma:
+
+Así seleccionamos un nodo que tiene un id pero que no queremos seleccionarlo como único= document.querySelector('div[id^="favorito_ficha_"]').innerHTML
+
+document.querySelector('div[id^="favorito_ficha_"]').innerHTML = 
+'<a>' + document.querySelector('div[id^="favorito_ficha_"]').innerHTML + '</a>';
+
+
+
+document.querySelector('div[id^="favorito_ficha_"] span').onclick = 
+"delete_from_favoritos("+ document.querySelector('div[id^="favorito_ficha_"]').id.replace("favorito_ficha_", "") +", '0')";
