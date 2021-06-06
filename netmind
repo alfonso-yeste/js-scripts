@@ -1,0 +1,47 @@
+Con jquery --- recordar que se la web tiene que utilizar jquery para que funcione
+
+jQuery(document).ready(function(){
+  jQuery("a[href^='tel:']").click(function(event){
+ 	event.preventDefault(); 
+ 
+ 	link  = jQuery(this).attr('href');
+ 
+ 	//ga('send', 'event', 'Contact', 'Phone', tracklink);
+ 	//_gaq.push(['_trackEvent', 'Contact', 'Phone', tracklink]);
+     console.log('Click phone'+link);
+     dataLayer.push({'event': 'ga.event',
+                    'eventCategory': 'Llamada',
+                    'eventAction': link,
+                    'eventLabel': {{Page URL}},
+                    'eventValue': 1});
+ 
+ 	setTimeout(function() {
+        window.location = link;
+ 	},300);
+  });
+  
+  jQuery('.head-info').click(function(event){
+    link  = jQuery(this).attr('href');
+    dataLayer.push({'event': 'ga.event',
+                    'eventCategory': 'Solicitar info',
+                    'eventAction': {{Page URL}},
+                    'eventLabel': {{Page URL}},
+                    'eventValue': 1});
+  });
+  
+  jQuery("a[href^='mailto:']").click(function(event){
+    link  = jQuery(this).attr('href');
+    dataLayer.push({'event': 'ga.event',
+                    'eventCategory': 'Email link',
+                    'eventAction': link,
+                    'eventLabel': {{Page URL}},
+                    'eventValue': 1});
+  });
+});
+
+//También ofrezco la versión en JS
+
+
+
+
+
