@@ -1,0 +1,17 @@
+Cómo ñadir un addeventlistener a Lullage a todos los productos de la home:
+
+<script>
+  (function() {
+    document.querySelectorAll("a.button.button_img.button_black").forEach(function(element) {
+      element.addEventListener('click', function() {
+        dataLayer.push({
+          'event': 'ga.event',
+          'eventCategory': 'comprar',
+          'eventAction': 'boton comprar',
+          'eventLabel': this.previousElementSibling.querySelector("p").innerText + {{Page Path}},
+          'eventValue': ''
+        });
+      });
+    });
+  })();
+</script>
