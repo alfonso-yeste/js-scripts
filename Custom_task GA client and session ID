@@ -11,3 +11,6 @@ function() {
 
 add number of your dimension where i put 4 and 8, one of them the scope (clientid) is user and the other scope is session. After this add this custom variable in ua settings
 as a fields to set (más campos que configurar): 1 customTask, {{variable}}
+
+here the article courtesy https://aukera.es/blog/id-cliente-sesion-analytics-gtm-customtask/
+
