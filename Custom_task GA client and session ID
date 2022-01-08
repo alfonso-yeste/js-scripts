@@ -1,0 +1,13 @@
+function() {
+  return function(model) {
+    // dimension clientID + sessionID
+    var cdiClientId = '4';
+    var cdiSessionId = '8';
+    model.set('dimension' + cdiClientId, model.get('clientId'));
+    model.set('dimension' + cdiSessionId, model.get('clientId') + '_' + (new Date().toISOString()));
+  }
+}
+
+
+add number of your dimension where i put 4 and 8, one of them the scope (clientid) is user and the other scope is session. After this add this custom variable in ua settings
+as a fields to set (más campos que configurar): 1 customTask, {{variable}}
