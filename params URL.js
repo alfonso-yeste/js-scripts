@@ -12,3 +12,8 @@ https://ofertas.csmgrup.com/mazda.php?utm_source=facebook&utm_medium=cpc
  params.get('utm_source');
 
 
+/*otra opción
+
+var params = (new URLSearchParams(window.location.search)).get("s_search");
+
+
